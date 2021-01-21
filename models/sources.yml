@@ -1,6 +1,7 @@
 version: 2
 sources:
   - name: jaffle_shop
+    description: Snowflake database raw table as source
     database: raw
     tables:
       - name: customers
