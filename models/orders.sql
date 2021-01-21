@@ -9,5 +9,5 @@ order_payments as (
  group by order_id
 
 )
-select payments.order_id,orders.customer_id, amount_dollars from order_payments as payments  left join orders on 
+select payments.order_id,orders.customer_id, amount_dollars, orders.status  from order_payments as payments left join orders on 
 payments.order_id=orders.order_id
