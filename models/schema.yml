@@ -34,6 +34,7 @@ models:
               to: ref('stg_customers')
               field: customer_id
   - name: orders
+    description: '{{ doc ("orders")}}'
     columns:
       - name: order_id
         tests:
@@ -42,4 +43,11 @@ models:
       - name: amount_dollars
         tests:
           - not_null
+      - name: status
+        description: "{{ doc('order_status') }}"
+        tests:
+              - accepted_values:
+                  values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+      
       
